@@ -14,81 +14,85 @@
       <div class="jumbotron jumbotron-fluid">
          <div class="container">
             <h1 class="display-4">Train Departure Schedule</h1>
-            <p class="lead">locomotives</p>
+            <p class="lead"></p>
          </div>
       </div>
       <!-- Current train schedules table section -->
-      <table class="table table-striped">
-         <thead>
-            <tr>
-               <th scope="col">Train Name</th>
-               <th scope="col">Destination</th>
-               <th scope="col">Frequency (min)</th>
-               <th scope="col">Next Arrival (HH:mm)</th>
-               <th scope="col">Minutes Away</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-              <!-- <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td> -->
-            
-            </tr>
-            <tr>
-              <!-- <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td> -->
-            </tr>
-            <tr>
-              <!-- <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr> -->
-            </tbody>
-      </table>
+      <div id="trainTable">
+          <table class="table table-striped">
+             <thead>
+                <tr>
+                   <th scope="col">Train Name</th>
+                   <th scope="col">Destination</th>
+                   <th scope="col">Frequency (min)</th>
+                   <th scope="col">Next Arrival (HH:mm)</th>
+                   <th scope="col">Minutes Away</th>
+                </tr>
+             </thead>
+             <tbody>
+                <tr>
+                  <!-- <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td> -->
+                
+                </tr>
+                <tr>
+                  <!-- <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td> -->
+                </tr>
+                <tr>
+                  <!-- <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr> -->
+                </tbody>
+          </table>
+      </div>
       <!-- user input section -->
-      <form class="needs-validation" novalidate>
-         <div class="form-row">
-           <div class="col-md-4 mb-3">
-             <label for="validationCustom01">Train Name</label>
-             <input type="text" class="form-control" id="trainName" placeholder="Train Name" value="Mark" required>
-             <div class="valid-feedback">
-               Looks good!
-             </div>
-          </div>
-          <div class="col-md-4 mb-3">
-             <label for="validationCustomUsername">Destination</label>
-             <div class="input-group">
-               <div class="input-group-prepend">
+
+        <div id="userInput">  
+          <form class="needs-validation" novalidate>
+             <div class="form-row">
+               <div class="col-md-4 mb-3">
+                 <label for="validationCustom01">Train Name</label>
+                 <input type="text" class="form-control" id="trainName" placeholder="Train Name" value="Train Name" required>
+                 <div class="valid-feedback">
+                   Looks good!
+                 </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                 <label for="validationCustomUsername">Destination</label>
+                 <div class="input-group">
+                   <div class="input-group-prepend">
+                   </div>
+                   <input type="text" class="form-control" id="destination" placeholder="Destination" aria-describedby="inputGroupPrepend" required>
+                   <div class="invalid-feedback">
+                     Start Date - (MM/DD/YY)
+                   </div>
+                 </div>
                </div>
-               <input type="text" class="form-control" id="destination" placeholder="Destination" aria-describedby="inputGroupPrepend" required>
-               <div class="invalid-feedback">
-                 Start Date - (MM/DD/YY)
+             </div>
+             <div class="form-row">
+               <div class="col-md-6 mb-3">
+                 <label for="validationCustom03">First Train Time (HH:mm military time)</label>
+                 <input type="text" class="form-control" id="firstTrainTime" placeholder="First Train Time" required>
+                 <div class="invalid-feedback">
+                 </div>
+               </div>
+               <div class="col-md-3 mb-3">
+                 <label for="validationCustom04">Frequency (min)</label>
+                 <input type="text" class="form-control" id="frequency" placeholder="Frequency" required>
+                 <div class="invalid-feedback">
+                 </div>
                </div>
              </div>
-           </div>
-         </div>
-         <div class="form-row">
-           <div class="col-md-6 mb-3">
-             <label for="validationCustom03">First Train Time (HH:mm military time)</label>
-             <input type="text" class="form-control" id="firstTrainTime" placeholder="First Train Time" required>
-             <div class="invalid-feedback">
-             </div>
-           </div>
-           <div class="col-md-3 mb-3">
-             <label for="validationCustom04">Frequency (min)</label>
-             <input type="text" class="form-control" id="frequency" placeholder="Frequency" required>
-             <div class="invalid-feedback">
-             </div>
-           </div>
-         </div>
-         <button class="btn btn-primary" id="addTrain" type="submit">Submit form</button>
-      </form>
-  
+             <button class="btn btn-primary" id="addTrain" type="submit">Submit Train</button>
+          </form>
+        </div>
 
        <!-- Firebase -->
        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js">

@@ -1,3 +1,40 @@
-*{
-	border: 1px dashed red;
+
+
+.jumbotron{
+	margin-bottom: 0px;
+	background-image: url(https://dashboard.finetoursnewzealand.co.nz/cache/tinymce_upload/trains_coastal_pacific_2__0x0_i.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background position: 0%, 25%;
+	padding-top: 30%;
+	padding-bottom: 30%;
 }
+
+.display-4 {
+	color: white;
+	size: 30px;
+}
+
+#trainTable {
+	margin-bottom: 20px;
+	border: 2px solid black;
+	margin-right:20px; 
+	margin-left:20px;
+}
+
+#userInput {
+	align-items: center;
+	padding-top: 20px;
+	border: 2px solid black;
+	margin-right: 20px;
+	margin-left: 20px;
+	background-color:  #dee2e6;
+}
+
+.formcontrol {
+	text-align: center;
+	margin-right: 30px
+	display: inline-block;
+	
+}
+
