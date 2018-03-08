@@ -1,117 +1,101 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Train Schedules</title>
-</head>
-<!-- CSS style sheet -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
-<!-- JQuery -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<body>
-
-<!-- Header -->
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Train Departure Schedule</h1>
-    <p class="lead">locomotives</p>
-  </div>
-</div>
-
-<!-- Current train schedules section -->
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Train Name</th>
-      <th scope="col">Destination</th>
-      <th scope="col">Frequency (min)</th>
-      <th scope="col">Next Arrival</th>
-      <th scope="col">Minutes Away</th>
-    </tr>
-  </thead>
-  <!-- <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody> -->
-</table>
-
-<!-- Add train section -->
-<form class="needs-validation" novalidate>
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="validationCustom01">Train Name</label>
-      <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
-      <div class="valid-feedback">
-        Looks good!
+   <head>
+      <title>Train Schedules</title>
+      <!-- CSS style sheet -->
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      
+     
+   </head>
+   <body>
+      <!-- Header -->
+      <div class="jumbotron jumbotron-fluid">
+         <div class="container">
+            <h1 class="display-4">Train Departure Schedule</h1>
+            <p class="lead">locomotives</p>
+         </div>
       </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationCustom02">Destination</label>
-      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationCustom02">First Train Time (HH:mm - Military Time)</label>
-      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom03">Frequency(min)</label>
-      <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
-      <div class="invalid-feedback">
-        Please provide a valid city.
-      </div>
-    </div>
- 
-  <button class="btn btn-primary" type="submit">Submit</button>
-</form>
+      <!-- Current train schedules table section -->
+      <table class="table table-striped">
+         <thead>
+            <tr>
+               <th scope="col">Train Name</th>
+               <th scope="col">Destination</th>
+               <th scope="col">Frequency (min)</th>
+               <th scope="col">Next Arrival (HH:mm)</th>
+               <th scope="col">Minutes Away</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+              <!-- <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td> -->
+            
+            </tr>
+            <tr>
+              <!-- <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td> -->
+            </tr>
+            <tr>
+              <!-- <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr> -->
+            </tbody>
+      </table>
+      <!-- user input section -->
+      <form class="needs-validation" novalidate>
+         <div class="form-row">
+           <div class="col-md-4 mb-3">
+             <label for="validationCustom01">Train Name</label>
+             <input type="text" class="form-control" id="trainName" placeholder="Train Name" value="Mark" required>
+             <div class="valid-feedback">
+               Looks good!
+             </div>
+          </div>
+          <div class="col-md-4 mb-3">
+             <label for="validationCustomUsername">Destination</label>
+             <div class="input-group">
+               <div class="input-group-prepend">
+               </div>
+               <input type="text" class="form-control" id="destination" placeholder="Destination" aria-describedby="inputGroupPrepend" required>
+               <div class="invalid-feedback">
+                 Start Date - (MM/DD/YY)
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="form-row">
+           <div class="col-md-6 mb-3">
+             <label for="validationCustom03">First Train Time (HH:mm military time)</label>
+             <input type="text" class="form-control" id="firstTrainTime" placeholder="First Train Time" required>
+             <div class="invalid-feedback">
+             </div>
+           </div>
+           <div class="col-md-3 mb-3">
+             <label for="validationCustom04">Frequency (min)</label>
+             <input type="text" class="form-control" id="frequency" placeholder="Frequency" required>
+             <div class="invalid-feedback">
+             </div>
+           </div>
+         </div>
+         <button class="btn btn-primary" id="addTrain" type="submit">Submit form</button>
+      </form>
+  
 
-<script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-</script>
-
-
-<!-- Javascript -->
-<script type="text/javascript" src="assets/javascript/train.js"></script>
-</body>
+       <!-- Firebase -->
+       <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js">
+      </script>
+      <!-- JQuery -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!-- Javascript -->
+      <script type="text/javascript" src="assets/javascript/train.js"></script>
+    </body>
 </html>
