@@ -33,8 +33,9 @@
 
 .formcontrol {
 	text-align: center;
-	margin-right: 30px
+	margin-left: 30px;
 	display: inline-block;
-	
+	margin-bottom: 100px;
+
 }
 

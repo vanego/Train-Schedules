@@ -84,3 +84,31 @@ $("#addTrain").on("click", function() {
 
     });
 
+    // moment js math
+
+    // first time pushed back 1 year to mae sure it comes before current time
+    var firstTimeConverted = moment(firstTrainTime, "hh:mm").subtract(1, "years");
+    console.log(firstTimeConverted);
+
+    // difference between times
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    console.log("DIFFERENCE IN TIME: " + diffTime);
+
+    // time apart (remainder)
+    var tRemainder = diffTime %
+    frequency;
+    console.log(tRemainder);
+
+    // minute until train
+    var tMinutesTilTrain = tRemainder;
+    console.log("MINUTES TIL TRAIN: " + tMinutesTilTrain);
+
+    // next Train
+    var nextArrival = moment().add(tMinutesTilTrain, "minutes");
+    console.log("ARRIVAL TIME: " + moment(nextArrival).format("HH:mm"));
+
+
+
+
+
+
