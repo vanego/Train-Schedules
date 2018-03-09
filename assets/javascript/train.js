@@ -67,29 +67,21 @@ $("#addTrain").on("click", function() {
 
     });
     database.ref().on("child_added", function(snapshot) {
-        console.log(snapshot.val().trainName);
-        console.log(snapshot.val().destination);
-        console.log(snapshot.val().firstTrainTime);
-        console.log(snapshot.val().frequency);
+        // console.log(snapshot.val().trainName);
+        // console.log(snapshot.val().destination);
+        // console.log(snapshot.val().firstTrainTime);
+        // console.log(snapshot.val().frequency);
 
-        var a = $("<tr>");
-        a.append("<td>" + snapshot.val().trainName + "</td>");
-        a.append("<td>" + snapshot.val().destination + "</td>");
-        a.append("<td>" + snapshot.val().firstTrainTime + "</td>");
-        a.append("<td>" + snapshot.val().nextArrival + "</td>");
-        a.append("<td>" + snapshot.val().minAway + "</td>");
-       
 
-        $("tbody").append(a);
+        // moment js math
 
-    });
-
-    // moment js math
-
-    // first time pushed back 1 year to mae sure it comes before current time
-    var firstTimeConverted = moment(firstTrainTime, "hh:mm").subtract(1, "years");
+    // first time pushed back 1 year to make sure it comes before current time
+    var firstTimeConverted = moment(firstTrainTime, "HH:mm").subtract(1, "years");
     console.log(firstTimeConverted);
 
+    // current time
+    var currentTime = moment();
+    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
     // difference between times
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
     console.log("DIFFERENCE IN TIME: " + diffTime);
@@ -107,8 +99,18 @@ $("#addTrain").on("click", function() {
     var nextArrival = moment().add(tMinutesTilTrain, "minutes");
     console.log("ARRIVAL TIME: " + moment(nextArrival).format("HH:mm"));
 
+    var a = $("<tr>");
+        a.append("<td>" + snapshot.val().trainName + "</td>");
+        a.append("<td>" + snapshot.val().destination + "</td>");
+        a.append("<td>" + snapshot.val().firstTrainTime + "</td>");
+        a.append("<td>" + moment(nextArrival).format("HH:mm")+ "</td>");
+        a.append("<td>" + tMinutesTilTrain+ "</td>");
+       
 
+        $("tbody").append(a);
+    });
 
+    
 
 
 
